@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Inclusão Digital - Mondaí</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <h1>🌐 Portal de Inclusão Digital</h1>
+    <p>Aprenda a usar a internet e acesse serviços públicos gratuitamente</p>
+    <p class="local">Comunidade de Mondaí - Santa Catarina</p>
+</header>
+
+<!-- CONTEÚDO PRINCIPAL -->
+<main class="conteiner">
+
+    <!-- TELA INICIAL / HOME -->
+    <div id="tela-inicio" class="secao">
+        <div class="grid-duas">
+
+            <!-- TUTORIAL -->
+            <section class="card card--home">
+                <div class="icone-tile icone-tile--verde">📖</div>
+                <h2 class="titulo-home">Primeiro Acesso?</h2>
+                <p class="descricao-home">
+                    Clique aqui para aprender passo-a-passo como usar este portal e a internet.
+                </p>
+                <button class="btn btn--verde btn--largo" onclick="mostrarTela('tela-tutorial')">
+                    Começar Tutorial ➜
+                </button>
+            </section>
+
+            <!-- EXPLORAR -->
+            <section class="card card--home">
+                <div class="icone-tile icone-tile--azul">🔍</div>
+                <h2 class="titulo-home">Explorar Serviços</h2>
+                <p class="descricao-home">
+                    Já conhece o portal? Escolha uma categoria para encontrar o que você precisa.
+                </p>
+                <button class="btn btn--azul btn--largo" onclick="mostrarTela('tela-categorias')">
+                    Ver Categorias ➜
+                </button>
+            </section>
+        </div>
+
+        <!-- BANNER DE BEM-VINDO -->
+        <div class="banner banner--alerta">
+            <strong>ℹ️ Dica:</strong> Este portal foi criado para ajudar pessoas que têm dúvidas com tecnologia e internet.
+            Não tem problema se você não sabe onde clicar - tudo aqui é explicado com cuidado e simplicidade.
+        </div>
+    </div>
+
+    <!-- TELA DE TUTORIAL -->
+    <div id="tela-tutorial" class="secao-oculta">
+        <button class="btn btn--voltar" onclick="mostrarTela('tela-inicio')">
+            ← Voltar
+        </button>
+
+        <div class="card">
+            <h2 class="titulo-tela">📚 Aprendendo a Usar o Portal</h2>
+
+            <div class="tutorial-passo">
+                <h3 class="titulo-passo">1️⃣ O que é internet?</h3>
+                <p>
+                    Internet é como uma grande biblioteca que você pode acessar de qualquer lugar. Ela contém informações,
+                    serviços e recursos que você pode usar no computador, tablet ou celular.
+                </p>
+            </div>
+
+            <div class="tutorial-passo">
+                <h3 class="titulo-passo">2️⃣ O que é um navegador?</h3>
+                <p>
+                    Um navegador é um programa que ajuda você a explorar a internet. Os mais conhecidos são:
+                </p>
+                <ul class="lista">
+                    <li>✓ Google Chrome (mais popular)</li>
+                    <li>✓ Mozilla Firefox</li>
+                    <li>✓ Safari (em Apple)</li>
+                    <li>✓ Microsoft Edge</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-passo">
+                <h3 class="titulo-passo">3️⃣ Como digitar um endereço?</h3>
+                <p>
+                    Para acessar um serviço online, você precisa digitar seu endereço (chamado URL):
+                </p>
+                <ol class="lista">
+                    <li><strong>Passo 1:</strong> Clique na barra de endereço (no topo do navegador)</li>
+                    <li><strong>Passo 2:</strong> Apague o que estiver lá</li>
+                    <li><strong>Passo 3:</strong> Digite o endereço (ex: www.google.com)</li>
+                    <li><strong>Passo 4:</strong> Aperte ENTER (ou a tecla com uma seta)</li>
+                </ol>
+            </div>
+
+            <div class="tutorial-passo">
+                <h3 class="titulo-passo">4️⃣ Como usar este portal</h3>
+                <p>
+                    Este portal está organizado por categorias. Você pode:
+                </p>
+                <ol class="lista">
+                    <li>Escolher uma <strong>categoria</strong> (trabalho, saúde, governo, etc)</li>
+                    <li>Clicar no <strong>serviço que precisa</strong></li>
+                    <li>Seguir as <strong>instruções passo-a-passo</strong></li>
+                    <li>Usar o <strong>link</strong> fornecido para acessar o serviço</li>
+                </ol>
+            </div>
+
+            <div class="tutorial-passo">
+                <h3 class="titulo-passo">5️⃣ Níveis de dificuldade</h3>
+                <p>
+                    Cada serviço tem um nível de dificuldade:
+                </p>
+                <div class="badge-legenda">
+                    <span class="badge badge--facil">🟢 FÁCIL</span>
+                    <p class="legenda">Para quem está começando</p>
+                </div>
+                <div class="badge-legenda">
+                    <span class="badge badge--medio">🟡 MÉDIO</span>
+                    <p class="legenda">Requer um pouco mais de experiência</p>
+                </div>
+                <div class="badge-legenda">
+                    <span class="badge badge--dificil">🔴 DIFÍCIL</span>
+                    <p class="legenda">Para quem já tem mais prática</p>
+                </div>
+            </div>
+
+            <div class="centralizado">
+                <button class="btn btn--azul" onclick="mostrarTela('tela-categorias')">
+                    Agora Explorar Categorias ➜
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TELA DE CATEGORIAS -->
+    <div id="tela-categorias" class="secao-oculta">
+        <button class="btn btn--voltar" onclick="mostrarTela('tela-inicio')">
+            ← Voltar para Início
+        </button>
+
+        <h2 class="titulo-tela centralizado">O que você precisa?</h2>
+        <p class="subtitulo-tela">
+            Clique em uma categoria para ver os serviços e recursos disponíveis
+        </p>
+
+        <div class="banner banner--info">
+            <strong>🔍 Busca:</strong> Digite uma palavra (ex: saúde, trabalho, governo) e clique em "Buscar" para encontrar a categoria certa.
+        </div>
+
+        <div class="linha-busca">
+            <input type="text" id="busca-input" class="input-busca" placeholder="Buscar categoria... Ex: saúde, trabalho, curso" aria-label="Buscar categoria">
+            <button type="button" class="btn btn--azul" onclick="buscarRecurso()">
+                Buscar 🔍
+            </button>
+        </div>
+
+        <div id="sem-resultados" class="sem-resultados sem-resultados-oculto">
+            Nenhuma categoria encontrada. Tente outra palavra ou clique em <strong>Ver todas</strong>.
+        </div>
+
+        <div class="centralizado">
+            <button type="button" class="btn btn--secundario btn--pequeno" onclick="resetarBusca()">
+                Ver todas as categorias
+            </button>
+        </div>
+
+        <div id="grid-categorias" class="grid-categorias">
+
+            <div class="card card--categoria" onclick="mostrarTela('tela-trabalho')">
+                <div class="icone-tile icone-tile--azul icone-tile--pequena">💼</div>
+                <h3 class="titulo-categoria">Trabalho & Renda</h3>
+                <p class="descricao-categoria">Encontrar emprego, fazer cursos, aumentar renda</p>
+            </div>
+
+            <div class="card card--categoria" onclick="mostrarTela('tela-governo')">
+                <div class="icone-tile icone-tile--azul icone-tile--pequena">📋</div>
+                <h3 class="titulo-categoria">Documentos & Governo</h3>
+                <p class="descricao-categoria">CPF, RG, INSS, impostos, documentos públicos</p>
+            </div>
+
+            <div class="card card--categoria" onclick="mostrarTela('tela-financas')">
+                <div class="icone-tile icone-tile--azul icone-tile--pequena">💰</div>
+                <h3 class="titulo-categoria">Finanças & Bancos</h3>
+                <p class="descricao-categoria">Contas bancárias, empréstimos, economizar dinheiro</p>
+            </div>
+
+            <div class="card card--categoria" onclick="mostrarTela('tela-educacao')">
+                <div class="icone-tile icone-tile--azul icone-tile--pequena">📚</div>
+                <h3 class="titulo-categoria">Educação & Cursos</h3>
+                <p class="descricao-categoria">Aprender online, alfabetização digital, profissões</p>
+            </div>
+
+            <div class="card card--categoria" onclick="mostrarTela('tela-saude')">
+                <div class="icone-tile icone-tile--azul icone-tile--pequena">🏥</div>
+                <h3 class="titulo-categoria">Saúde & Bem-estar</h3>
+                <p class="descricao-categoria">Consultas, informações de saúde, telemedicina</p>
+            </div>
+
+            <div class="card card--categoria" onclick="mostrarTela('tela-ajuda')">
+                <div class="icone-tile icone-tile--azul icone-tile--pequena">❓</div>
+                <h3 class="titulo-categoria">Ajuda & Suporte</h3>
+                <p class="descricao-categoria">Perguntas frequentes, como usar, suporte</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CATEGORIAS DE CONTEÚDO -->
+
+    <!-- TRABALHO -->
+    <div id="tela-trabalho" class="secao-oculta">
+        <button class="btn btn--voltar" onclick="mostrarTela('tela-categorias')">
+            ← Voltar para Categorias
+        </button>
+
+        <h2 class="titulo-tela">💼 Trabalho & Renda</h2>
+
+        <div class="card card--recurso">
+            <h3 class="titulo-recurso">Como Procurar Emprego Online</h3>
+            <div class="badges">
+                <span class="badge badge--facil">FÁCIL</span>
+                <span class="badge badge--tempo">⏱️ 15 minutos</span>
+            </div>
+            <p class="descricao-recurso">
+                Aprenda a procurar trabalho em sites como LinkedIn, Indeed e Catho. Você pode criar um perfil e enviar seu currículo para empresas.
+            </p>
+            <div class="step">
+                <span class="step-numero">1.</span> Abra o navegador (Chrome, Firefox)
+            </div>
+            <div class="step">
+                <span class="step-numero">2.</span> Digite: <strong>www.linkedin.com/pt-br</strong> (ou www.catho.com.br)
+            </div>
+            <div class="step">
+                <span class="step-numero">3.</span> Clique em "Criar conta grátis"
+            </div>
+            <div class="step">
+                <span class="step-numero">4.</span> Preencha seus dados (nome, email, telefone)
+            </div>
+            <div class="step">
+                <span class="step-numero">5.</span> Procure por "Vagas de Emprego"
+            </div>
+            <a href="https://www.linkedin.com/pt-br" target="_blank" rel="noopener" class="btn-link">Ir para LinkedIn →</a>
+            <a href="https://www.catho.com.br" target="_blank" rel="noopener" class="btn-link">Ir para Catho →</a>
+        </div>
+
+        <div class="card card--recurso">
+            <h3 class="titulo-recurso">Cursos Profissionais Gratuitos</h3>
+            <div class="badges">
+                <span class="badge badge--facil">FÁCIL</span>
+                <span class="badge badge--tempo">⏱️ Próprio ritmo</span>
+            </div>
+            <p class="descricao-recurso">
+                Plataformas de cursos online totalmente grátis para melhorar suas habilidades profissionais.
+            </p>
+            <div class="step">
+                <span class="step-numero">1.</span> <strong>Coursera:</strong> Acesse www.coursera.org/pt e escolha um curso gratuito
+            </div>
+            <div class="step">
+                <span class="step-numero">2.</span> <strong>Khan Academy:</strong> www.khanacademy.org/pt-br (Vídeos sobre vários temas)
+            </div>
+            <div class="step">
+                <span class="step-numero">3.</span> <strong>Google Skills:</strong> www.learndigital.withgoogle.com (Cursos do Google)
+            </div>
+            <a href="https://www.coursera.org/pt" target="_blank" rel="noopener" class="btn-link">Ir para Coursera →</a>
+            <a href="https://www.khanacademy.org/pt-br" target="_blank" rel="noopener" class="btn-link">Ir para Khan Academy →</a>
+        </div>
+
+        <div class="card card--recurso">
+            <h3 class="titulo-recurso">Frente de Trabalho e Renda Social</h3>
+            <div class="badges">
+                <span class="badge badge--medio">MÉDIO</span>
+                <span class="badge badge--tempo">⏱️ 20 minutos</span>
+            </div>
+            <p class="descricao-recurso">
+                Programas de governo para quem quer trabalho rápido ou precisa de renda extra.
+            </p>
+            <div class="step">
+                <span class="step-numero">1.</span> Entre em contato com a Prefeitura de Mondaí
+            </div>
+            <div class="step">
+                <span class="step-numero">2.</span> Ou visite o CRAS (Centro de Referência de Assistência Social)
+            </div>
+            <div class="step">
+                <span class="step-numero">3.</span> Eles informarão sobre programas de trabalho e renda
+            </div>
+            <a href="https://www.gov.br/cidadao/pt-br" target="_blank" rel="noopener" class="btn-link">Ver Programas do Governo →</a>
+        </div>
+    </div>
+
+    <!-- GOVERNO -->
+    <div id="tela-governo" class="secao-oculta">
+        <button class="btn btn--voltar" onclick="mostrarTela('tela-categorias')">
+            ← Voltar para Categorias
+        </button>
+
+        <h2 class="titulo-tela">📋 Documentos & Governo</h2>
+
+        <div class="banner banner--alerta">
+            <strong>⚠️ Importante:</strong> Serviços de governo são 100% GRATUITOS. Cuidado com sites que cobram para fazer seus documentos!
+        </div>
+
+        <div class="card card--recurso">
+            <h3 class="titulo-recurso">Consultar ou Solicitar CPF</h3>
+            <div class="badges">
+                <span class="badge badge--facil">FÁCIL</span>
+                <span class="badge badge--tempo">⏱️ 10 minutos</span>
+            </div>
+            <p class="descricao-recurso">
+                O CPF (Cadastro de Pessoas Físicas) é um número que identifica você. Você pode solicitar online gratuitamente.
+            </p>
+            <div class="step">
+                <span class="step-numero">1.</span> Abra: <strong>www.receita.fazenda.gov.br</strong>
+            </div>
+            <div class="step">
+                <span class="step-numero">2.</span> Clique em "Solicitar CPF"
+            </div>
+            <div class="step">
+                <span class="step-numero">3.</span> Preencha com seus dados pessoais
+            </div>
+            <div class="step">
+                <span class="step-numero">4.</span> Imprima o comprovante
+            </div>
+            <a href="https://www.receita.fazenda.gov.br" target="_blank" rel="noopener" class="btn-link">Ir para Receita Federal →</a>
+        </div>
+
+        <div class="card card--recurso">
+            <h3 class="titulo-recurso">Acompanhar INSS (Aposentadoria/Auxílio)</h3>
+            <div class="badges">
+                <span class="badge badge--medio">MÉDIO</span>
+                <span class="badge badge--tempo">⏱️ 15 minutos</span>
+            </div>
+            <p class="descricao-recurso">
+                Verifique sua aposentadoria, auxílio-doença, auxílio-acidente e outros benefícios do INSS pelo site.
+            </p>
+            <div class="step">
+                <span class="step-numero">1.</span> Acesse: <strong>www.inss.gov.br</strong>
+            </div>
+            <div class="step">
+                <span class="step-numero">2.</span> Clique em "Meu INSS"
+            </div>
+            <div class="step">
+                <span class="step-numero">3.</span> Faça login com sua senha
+            </div>
+            <div class="step">
+                <span class="step-numero">4.</span> Procure por "Extratos" ou "Consultar Benefício"
+            </div>
+            <a href="https://www.inss.gov.br" target="_blank" rel="noopener" class="btn-link">Ir para INSS →</a>
+        </div>
+
+        <div class="card card--recurso">
+            <h3 class="titulo-recurso">Portal do Governo Brasileiro</h3>
+            <div class="badges">
+                <span class="badge badge--facil">FÁCIL</span>
+                <span class="badge badge--tempo">⏱️ Vários serviços</span>
+            </div>
+            <p class="descricao-recurso">
+                Um único portal para acessar todos os serviços do governo federal (documentos, benefícios, informações).
+            </p>
+            <div class="step">
+                <span class="step-numero">1.</span> Abra: <strong>www.gov.br</strong>
+            </div>
+            <div class="step">
+                <span class="step-numero">2.</span> Procure pelo serviço que você precisa
+            </div>
+            <div class="step">
+                <span class="step-numero">3.</span> Leia as instruções passo-a-passo
+            </div>
+            <a href="https://www.gov.br" target="_blank" rel="noopener" class="btn-link">Ir para Portal do Governo →</a>
+        </div>
+    </div>
+
+    <!-- FINANÇAS -->
+    <div id="tela-financas" class="secao-oculta">
+        <button class="btn btn--voltar" onclick="mostrarTela('tela-categorias')">
+            ← Voltar para Categorias
+        </button>
+
+        <h2 class="titulo-tela">💰 Finanças & Bancos</h2>
+
+        <div class="banner banner--alerta">
+            <strong>⚠️ Atenção:</strong> Nunca compartilhe sua senha ou dados bancários online. Bancos legítimos NUNCA pedem essas informações por email ou celular!
+        </div>
+
+        <div class="card card--recurso">
+            <h3 class="titulo-recurso">Abrir Conta Bancária Online</h3>
+            <div class="badges">
+                <span class="badge badge--facil">FÁCIL</span>
+                <span class="badge badge--tempo">⏱️ 30 minutos</span>
+            </div>
+            <p class="descricao-recurso">
+                Você pode abrir uma conta no banco pelo celular ou computador. É grátis e rápido!
+            </p>
+            <div class="step">
+                <span class="step-numero">1.</span> Escolha um banco: Caixa, Banco do Brasil, Nubank, Inter...
+            </div>
+            <div class="step">
+                <span class="step-numero">2.</span> Baixe o app ou acesse o site
+            </div>
+            <div class="step">
+                <span class="step-numero">3.</span> Clique em "Abrir Conta"
+            </div>
+            <div class="step">
+                <span class="step-numero">4.</span> Preencha seus dados e tire foto dos documentos
+            </div>
+            <div class="step">
+                <span class="step-numero">5.</span> Aguarde aprovação (geralmente 1-2 dias)
+            </div>
+            <a href="https://www.caixa.gov.br" target="_blank" rel="noopener" class="btn-link">Caixa Econômica →</a>
+            <a href="https://www.bb.com.br" target="_blank" rel="noopener" class="btn-link">Banco do Brasil →</a>
+        </div>
+
+        <div class="card card--recurso">
+            <h3 class="titulo-recurso">Entender Juros e Empréstimos</h3>
+            <div class="badges">
+                <span class="badge badge--medio">MÉDIO</span>
+                <span class="badge badge--tempo">⏱️ Educativo</span>
+            </div>
+            <p class="descricao-recurso">
+                Aprenda o que são juros, como funcionam empréstimos e como não cair em armadilhas financeiras.
+            </p>
+            <div class="step">
+                <span class="step-numero">1.</span> <strong>Juros simples:</strong> Taxa adicional que você paga por pedir dinheiro emprestado
+            </div>
+            <div class="step">
+                <span class="step-numero">2.</span> <strong>Dica:</strong> Sempre compare as taxas entre bancos antes de pedir empréstimo
+            </div>
+            <div class="step">
+                <span class="step-numero">3.</span> <strong>Cuidado:</strong> Empréstimos por WhatsApp são ilegais. Procure bancos de verdade.
+            </div>
+            <a href="https://www.bcb.gov.br/acessoinformacao/financaspessoais" target="_blank" rel="noopener" class="btn-link">Dicas do Banco Central →</a>
+        </div>
+
+        <div class="card card--recurso">
+            <h3 class="titulo-recurso">Reclamar de Banco ou Serviço Financeiro</h3>
+            <div class="badges">
+                <span class="badge badge--medio">MÉDIO</span>
+                <span class="badge badge--tempo">⏱️ 20 minutos</span>
+            </div>
+            <p class="descricao-recurso">
+                Tem problemas com seu banco? Você pode fazer uma reclamação no BC (Banco Central).
+            </p>
+            <div class="step">
+                <span class="step-numero">1.</span> Acesse: <strong>www.bcb.gov.br</strong>
+            </div>
+            <div class="step">
+                <span class="step-numero">2.</span> Procure por "Reclamações"
+            </div>
+            <div class="step">
+                <span class="step-numero">3.</span> Preencha o formulário com sua reclamação
+            </div>
+            <a href="https://www.bcb.gov.br" target="_blank" rel="noopener" class="btn-link">Ir para Banco Central →</a>
+        </div>
+    </div>
+
+    <!-- EDUCAÇÃO -->
+    <div id="tela-educacao" class="secao-oculta">
+        <button class="btn btn--voltar" onclick="mostrarTela('tela-categorias')">
+            ← Voltar para Categorias
+        </button>
+
+        <h2 class="titulo-tela">📚 Educação & Cursos</h2>
+
+        <div class="card card--recurso">
+            <h3 class="titulo-recurso">Alfabetização Digital Completa</h3>
+            <div class="badges">
+                <span class="badge badge--facil">FÁCIL</span>
+                <span class="badge badge--tempo">⏱️ 4-6 semanas</span>
+            </div>
+            <p class="descricao-recurso">
+                Aprenda do zero: como usar mouse, teclado, internet, email, redes sociais e mais.
+            </p>
+            <div class="step">
+                <span class="step-numero">1.</span> Procure cursos de informática básica em sua cidade (prefeitura, biblioteca, SESC)
+            </div>
+            <div class="step">
+                <span class="step-numero">2.</span> Muitos são GRATUITOS para maiores de 60 anos ou desempregados
+            </div>
+            <div class="step">
+                <span class="step-numero">3.</span> Você também pode aprender online em plataformas como YouTube
+            </div>
+            <a href="https://www.youtube.com/results?search_query=inform%C3%A1tica+b%C3%A1sica" target="_blank" rel="noopener" class="btn-link">Vídeos no YouTube →</a>
+        </div>
+
+        <div class="card card--recurso">
+            <h3 class="titulo-recurso">Cursos Online Gratuitos (Diversos Temas)</h3>
+            <div class="badges">
+                <span class="badge badge--facil">FÁCIL</span>
+                <span class="badge badge--tempo">⏱️ Seu ritmo</span>
+            </div>
+            <p class="descricao-recurso">
+                Plataformas que oferecem cursos de educação, profissão, idiomas e hobbies completamente gratuitos.
+            </p>
+            <div class="step">
+                <span class="step-numero">1.</span> <strong>Coursera:</strong> Cursos de universidades famosas (www.coursera.org/pt)
+            </div>
+            <div class="step">
+                <span class="step-numero">2.</span> <strong>Khan Academy:</strong> Vídeos de matérias escolares (www.khanacademy.org/pt-br)
+            </div>
+            <div class="step">
+                <span class="step-numero">3.</span> <strong>Skillshare:</strong> Criatividade e design (www.skillshare.com)
+            </div>
+            <div class="step">
+                <span class="step-numero">4.</span> <strong>Google Skills:</strong> Cursos de marketing e tecnologia (learndigital.withgoogle.com)
+            </div>
+            <a href="https://www.coursera.org/pt" target="_blank" rel="noopener" class="btn-link">Coursera →</a>
+            <a href="https://www.khanacademy.org/pt-br" target="_blank" rel="noopener" class="btn-link">Khan Academy →</a>
+        </div>
+
+        <div class="card card--recurso">
+            <h3 class="titulo-recurso">Ensino Fundamental e Médio Online</h3>
+            <div class="badges">
+                <span class="badge badge--medio">MÉDIO</span>
+                <span class="badge badge--tempo">⏱️ Semestral</span>
+            </div>
+            <p class="descricao-recurso">
+                Programas de educação para adultos que não completaram o ensino fundamental ou médio.
+            </p>
+            <div class="step">
+                <span class="step-numero">1.</span> Procure na prefeitura de Mondaí por programas de EJA (Educação de Jovens e Adultos)
+            </div>
+            <div class="step">
+                <span class="step-numero">2.</span> Muitos são gratuitos e oferecem certificado oficial
+            </div>
+            <a href="https://www.gov.br/cidadao/pt-br" target="_blank" rel="noopener" class="btn-link">Ver Programas Federais →</a>
+        </div>
+    </div>
+
+    <!-- SAÚDE -->
+    <div id="tela-saude" class="secao-oculta">
+        <button class="btn btn--voltar" onclick="mostrarTela('tela-categorias')">
+            ← Voltar para Categorias
+        </button>
+
+        <h2 class="titulo-tela">🏥 Saúde & Bem-estar</h2>
+
+        <div class="card card--recurso">
+            <h3 class="titulo-recurso">Marcar Consultas no SUS Online</h3>
+            <div class="badges">
+                <span class="badge badge--facil">FÁCIL</span>
+                <span class="badge badge--tempo">⏱️ 10 minutos</span>
+            </div>
+            <p class="descricao-recurso">
+                Você pode marcar consultas médicas pelo computador em muitas cidades. Não precisa ir pessoalmente!
+            </p>
+            <div class="step">
+                <span class="step-numero">1.</span> Abra o site da Prefeitura de Mondaí ou da Secretaria de Saúde
+            </div>
+            <div class="step">
+                <span class="step-numero">2.</span> Procure por "Marcar Consulta" ou "Agendamento Online"
+            </div>
+            <div class="step">
+                <span class="step-numero">3.</span> Digite seu CPF ou cartão SUS
+            </div>
+            <div class="step">
+                <span class="step-numero">4.</span> Escolha a especialidade e data desejada
+            </div>
+            <div class="step">
+                <span class="step-numero">5.</span> Confirme e anote a data/hora
+            </div>
+            <a href="https://www.gov.br/cidadao/pt-br" target="_blank" rel="noopener" class="btn-link">Portal do Governo →</a>
+        </div>
+
+        <div class="card card--recurso">
+            <h3 class="titulo-recurso">Telemedicina Gratuita</h3>
+            <div class="badges">
+                <span class="badge badge--facil">FÁCIL</span>
+                <span class="badge badge--tempo">⏱️ 30 minutos</span>
+            </div>
+            <p class="descricao-recurso">
+                Consulte um médico pelo celular ou computador sem sair de casa! O SUS oferece telemedicina gratuita.
+            </p>
+            <div class="step">
+                <span class="step-numero">1.</span> Procure seu posto de saúde local para informações
+            </div>
+            <div class="step">
+                <span class="step-numero">2.</span> Ou acesse aplicativos aprovados pelo governo
+            </div>
+            <div class="step">
+                <span class="step-numero">3.</span> Faça sua consulta de qualquer lugar com câmera e microfone
+            </div>
+            <a href="https://telehealth.saude.gov.br" target="_blank" rel="noopener" class="btn-link">Telesaúde Brasil →</a>
+        </div>
+
+        <div class="card card--recurso">
+            <h3 class="titulo-recurso">Informações de Saúde Confiáveis</h3>
+            <div class="badges">
+                <span class="badge badge--facil">FÁCIL</span>
+                <span class="badge badge--tempo">⏱️ Educativo</span>
+            </div>
+            <p class="descricao-recurso">
+                Sites confiáveis para tirar dúvidas sobre saúde, doenças e medicamentos.
+            </p>
+            <div class="step">
+                <span class="step-numero">1.</span> <strong>Ministério da Saúde:</strong> saude.gov.br
+            </div>
+            <div class="step">
+                <span class="step-numero">2.</span> <strong>Portal de Informações:</strong> www.posgraduando.com.br
+            </div>
+            <div class="step">
+                <span class="step-numero">3.</span> <strong>Dica:</strong> Sempre desconfie de promessas de cura milagrosa
+            </div>
+            <a href="https://www.saude.gov.br" target="_blank" rel="noopener" class="btn-link">Ministério da Saúde →</a>
+        </div>
+    </div>
+
+    <!-- AJUDA -->
+    <div id="tela-ajuda" class="secao-oculta">
+        <button class="btn btn--voltar" onclick="mostrarTela('tela-categorias')">
+            ← Voltar para Categorias
+        </button>
+
+        <h2 class="titulo-tela">❓ Perguntas Frequentes & Ajuda</h2>
+
+        <h3 class="titulo-secao">📱 Perguntas Sobre Tecnologia</h3>
+
+        <div class="card card--recurso">
+            <h3 class="titulo-recurso">O que fazer se o site não abre?</h3>
+            <p class="descricao-recurso">
+                Tente estes passos:
+            </p>
+            <ul class="lista">
+                <li>1. Verifique se a internet está funcionando</li>
+                <li>2. Atualize a página (tecla F5 ou botão circular no topo)</li>
+                <li>3. Feche e abra o navegador novamente</li>
+                <li>4. Tente em outro navegador</li>
+                <li>5. Se ainda não funcionar, o servidor pode estar fora. Tente depois.</li>
+            </ul>
+        </div>
+
+        <div class="card card--recurso">
+            <h3 class="titulo-recurso">Esqueci minha senha. O que fazer?</h3>
+            <p class="descricao-recurso">
+                Na maioria dos sites, há um botão "Esqueci minha senha":
+            </p>
+            <ul class="lista">
+                <li>1. Clique em "Esqueci minha senha"</li>
+                <li>2. Digite seu email</li>
+                <li>3. Procure um email da empresa</li>
+                <li>4. Siga o link para criar nova senha</li>
+            </ul>
+        </div>
+
+        <div class="card card--recurso">
+            <h3 class="titulo-recurso">Como anexar documentos?</h3>
+            <p class="descricao-recurso">
+                Para enviar documentos (PDF, foto, arquivo):
+            </p>
+            <ul class="lista">
+                <li>1. Procure por um botão "Escolher arquivo" ou "+" no site</li>
+                <li>2. Clique nele</li>
+                <li>3. Selecione o arquivo no seu computador/celular</li>
+                <li>4. Abra-o e clique em "Enviar"</li>
+            </ul>
+        </div>
+
+        <h3 class="titulo-secao">🛡️ Segurança e Privacidade</h3>
+
+        <div class="card card--recurso">
+            <h3 class="titulo-recurso">Como reconhecer um site falso?</h3>
+            <div class="aviso-vermelho">
+                <strong>⚠️ Cuidado com golpes!</strong>
+            </div>
+            <ul class="lista">
+                <li>✓ Verifique o endereço no topo (deve ser oficial)</li>
+                <li>✓ Procure por "https://" (seguro) e cadeado 🔒</li>
+                <li>✓ Desconfie de erros de digitação no site</li>
+                <li>✓ Nunca clique em links de email suspeitos</li>
+                <li>✓ Bancos reais NUNCA pedem senha por email</li>
+            </ul>
+        </div>
+
+        <div class="card card--recurso">
+            <h3 class="titulo-recurso">O que NUNCA fazer online?</h3>
+            <ul class="lista lista--perigo">
+                <li>❌ Compartilhar CPF ou RG em qualquer site</li>
+                <li>❌ Contar sua senha para ninguém (nem para banco)</li>
+                <li>❌ Clicar em links de mensagens estranhas</li>
+                <li>❌ Baixar arquivos de pessoas desconhecidas</li>
+                <li>❌ Enviar dinheiro para números de WhatsApp</li>
+                <li>❌ Fazer transferências por banco sem ter certeza</li>
+            </ul>
+        </div>
+
+        <h3 class="titulo-secao">📞 Onde Pedir Ajuda</h3>
+
+        <div class="card card--recurso">
+            <h3 class="titulo-recurso">Ajuda Presencial em Mondaí</h3>
+            <ul class="lista">
+                <li><strong>🏛️ Prefeitura:</strong> Departamento de Inclusão Digital</li>
+                <li><strong>🤝 CRAS:</strong> Centro de Referência de Assistência Social</li>
+            </ul>
+        </div>
+
+        <div class="card card--recurso">
+            <h3 class="titulo-recurso">Telefones Importantes</h3>
+            <ul class="lista">
+                <li><strong>Prefeitura de Mondaí:</strong> (49) 3644-9000</li>
+                <li><strong>CRAS Mondaí:</strong> (49) 3644-4300</li>
+                <li><strong>Central de Atendimento Governo:</strong> 162</li>
+                <li><strong>Disque 100 (Denúncias):</strong> 100</li>
+            </ul>
+        </div>
+
+        <div class="banner banner--alerta">
+            <strong>💚 Nós queremos ajudar!</strong> Se tiver dúvidas que não constam aqui, visite a biblioteca ou CRAS de Mondaí.
+            Estamos aqui para garantir que todos possam acessar a tecnologia com segurança e confiança.
+        </div>
+    </div>
+
+</main>
+
+<!-- RODAPÉ -->
+<footer class="rodape">
+    <p class="titulo">Portal de Inclusão Digital - Mondaí</p>
+    <p>Este portal é completamente <strong>GRATUITO</strong> e será mantido atualizado</p>
+    <p class="data">Última atualização: 2026</p>
+</footer>
+
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>
