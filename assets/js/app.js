@@ -20,9 +20,14 @@ function mostrarTela(telaId) {
     $('html, body').animate({scrollTop: 0}, 500);
 }
 
+// Remove acentos e deixa tudo minúsculo para facilitar a busca
+function normalizar(texto) {
+    return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
 // Busca por palavra-chave: filtra os cards de categoria
 function buscarRecurso() {
-    var termo = $('#busca-input').val().trim().toLowerCase();
+    var termo = normalizar($('#busca-input').val());
     var cards = $('#grid-categorias .card--categoria');
     var encontrados = 0;
 
@@ -33,9 +38,9 @@ function buscarRecurso() {
         return;
     }
 
-    // Filtra os cards pelo texto visível (título + descrição)
+    // Filtra os cards pelo texto visível (título + descrição) e pelas palavras-chave
     cards.each(function () {
-        var texto = $(this).text().toLowerCase();
+        var texto = normalizar($(this).text() + ' ' + ($(this).data('termos') || ''));
         if (texto.indexOf(termo) !== -1) {
             $(this).show();
             encontrados++;
@@ -72,4 +77,7 @@ $(document).ready(function () {
             buscarRecurso();
         }
     });
+
+    // Busca em tempo real enquanto o usuário digita
+    $('#busca-input').on('input', buscarRecurso);
 });

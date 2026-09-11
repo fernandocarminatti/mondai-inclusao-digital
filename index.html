@@ -150,11 +150,11 @@
         </p>
 
         <div class="banner banner--info">
-            <strong>🔍 Busca:</strong> Digite uma palavra (ex: saúde, trabalho, governo) e clique em "Buscar" para encontrar a categoria certa.
+            <strong>🔍 Busca:</strong> Digite uma palavra (ex: saúde, trabalho, CPF, INSS) e os resultados aparecem automaticamente conforme você digita.
         </div>
 
         <div class="linha-busca">
-            <input type="text" id="busca-input" class="input-busca" placeholder="Buscar categoria... Ex: saúde, trabalho, curso" aria-label="Buscar categoria">
+            <input type="text" id="busca-input" class="input-busca" placeholder="Buscar: ex: saúde, trabalho, CPF, curso, banco..." aria-label="Buscar categoria">
             <button type="button" class="btn btn--azul" onclick="buscarRecurso()">
                 Buscar 🔍
             </button>
@@ -172,37 +172,37 @@
 
         <div id="grid-categorias" class="grid-categorias">
 
-            <div class="card card--categoria" onclick="mostrarTela('tela-trabalho')">
+            <div class="card card--categoria" data-termos="emprego, vaga, curriculo, linkedin, catho, renda, curso profissional, criar perfil" onclick="mostrarTela('tela-trabalho')">
                 <div class="icone-tile icone-tile--azul icone-tile--pequena">💼</div>
                 <h3 class="titulo-categoria">Trabalho & Renda</h3>
                 <p class="descricao-categoria">Encontrar emprego, fazer cursos, aumentar renda</p>
             </div>
 
-            <div class="card card--categoria" onclick="mostrarTela('tela-governo')">
+            <div class="card card--categoria" data-termos="cpf, rg, inss, aposentadoria, auxilio, imposto, gov.br, documentos, beneficios, receita federal" onclick="mostrarTela('tela-governo')">
                 <div class="icone-tile icone-tile--azul icone-tile--pequena">📋</div>
                 <h3 class="titulo-categoria">Documentos & Governo</h3>
                 <p class="descricao-categoria">CPF, RG, INSS, impostos, documentos públicos</p>
             </div>
 
-            <div class="card card--categoria" onclick="mostrarTela('tela-financas')">
+            <div class="card card--categoria" data-termos="banco, conta, nubank, juros, emprestimo, caixa, banco do brasil, reclamacao, banco central, economizar" onclick="mostrarTela('tela-financas')">
                 <div class="icone-tile icone-tile--azul icone-tile--pequena">💰</div>
                 <h3 class="titulo-categoria">Finanças & Bancos</h3>
                 <p class="descricao-categoria">Contas bancárias, empréstimos, economizar dinheiro</p>
             </div>
 
-            <div class="card card--categoria" onclick="mostrarTela('tela-educacao')">
+            <div class="card card--categoria" data-termos="curso, alfabetizacao, khan, coursera, google skills, eja, escola, idiomas, aprender online, youtube" onclick="mostrarTela('tela-educacao')">
                 <div class="icone-tile icone-tile--azul icone-tile--pequena">📚</div>
                 <h3 class="titulo-categoria">Educação & Cursos</h3>
                 <p class="descricao-categoria">Aprender online, alfabetização digital, profissões</p>
             </div>
 
-            <div class="card card--categoria" onclick="mostrarTela('tela-saude')">
+            <div class="card card--categoria" data-termos="sus, consulta, medico, telemedicina, vacina, remedio, posto, saude online, marcacao" onclick="mostrarTela('tela-saude')">
                 <div class="icone-tile icone-tile--azul icone-tile--pequena">🏥</div>
                 <h3 class="titulo-categoria">Saúde & Bem-estar</h3>
                 <p class="descricao-categoria">Consultas, informações de saúde, telemedicina</p>
             </div>
 
-            <div class="card card--categoria" onclick="mostrarTela('tela-ajuda')">
+            <div class="card card--categoria" data-termos="senha, golpe, site falso, seguranca, telefone, cras, prefeitura, anexar, ajuda, duvida, esqueci" onclick="mostrarTela('tela-ajuda')">
                 <div class="icone-tile icone-tile--azul icone-tile--pequena">❓</div>
                 <h3 class="titulo-categoria">Ajuda & Suporte</h3>
                 <p class="descricao-categoria">Perguntas frequentes, como usar, suporte</p>
