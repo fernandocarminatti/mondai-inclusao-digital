@@ -23,7 +23,7 @@ function mostrarTela(telaId) {
 // Busca por palavra-chave: filtra os cards de categoria
 function buscarRecurso() {
     var termo = $('#busca-input').val().trim().toLowerCase();
-    var cards = $('#grid-categorias .card-categoria');
+    var cards = $('#grid-categorias .card--categoria');
     var encontrados = 0;
 
     // Campo vazio: mostra todas as categorias
@@ -58,7 +58,7 @@ function resetarBusca() {
     if (campo.length) {
         campo.val('');
     }
-    $('#grid-categorias .card-categoria').show();
+    $('#grid-categorias .card--categoria').show();
     $('#sem-resultados').addClass('sem-resultados-oculto');
 }
 
